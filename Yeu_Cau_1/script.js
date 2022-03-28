@@ -70,3 +70,58 @@ function alphanumeric(uadd) {
         return false;
     }
 }
+// Hàm JavaScript để xác thực country
+function countryselect(ucountry) {
+    if (ucountry.value == "Default") {
+        alert('Select your country from the list');
+        ucountry.focus();
+        return false;
+    }
+    else {
+        return true;
+    }
+} 
+// Hàm JavaScript để xác thực ZIP code
+function allnumeric(uzip) {
+    var numbers = /^[0-9]+$/;
+    if (uzip.value.match(numbers)) {
+        return true;
+    }
+    else {
+        alert('ZIP code must have numeric characters only');
+        uzip.focus();
+        return false;
+    }
+}
+// Hàm JavaScript để xác thực định dạng email
+function ValidateEmail(uemail) {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (uemail.value.match(mailformat)) {
+        return true;
+    }
+    else {
+        alert("You have entered an invalid email address!");
+        uemail.focus();
+        return false;
+    }
+}
+// // Hàm JavaScript để xác thực giới tính
+function validsex(umsex, ufsex) {
+    x = 0;
+
+    if (umsex.checked) {
+        x++;
+    } if (ufsex.checked) {
+        x++;
+    }
+    if (x == 0) {
+        alert('Select Male/Female');
+        umsex.focus();
+        return false;
+    }
+    else {
+        alert('Form Successfully Submitted');
+        window.location.reload()
+        return true;
+    }
+}
